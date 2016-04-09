@@ -1,0 +1,18 @@
+Buecher:
+-Titel							#String
+-Autor						#String
+-Serie						#String
+-Serien Reihenfolge	#Integer
+-Genre						#String
+-(Klappentex)			#String
+-isbn							#String
+-id							#Integer
+
+
+Plan:
+-sqlite db aufsetzen
+-struktur und tabelle anlegen
+-skript zum anlegen der grunddaten
+-skript zur ausgabe
+[-grafische ausgabe mit sortiermoeglichkeit]
+-Standardausgabe: sort by author, series, title
