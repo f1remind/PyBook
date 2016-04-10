@@ -27,7 +27,22 @@ def debug(db = database, sortier=""):
     conn.commit()
     entries = c.fetchall()
     for entry in entries:
-        print('|{:^5}|{:^35}|{:^20}|{:^15}|'.format(entry[0], entry[1], entry[2], entry[-1]))
+        titel = entry[1]
+        if len(titel) > 35:
+            i = titel.index(' ', 20)
+            row1 = titel[:i]
+            row2 = titel[i+1:]
+            print('|{:^5}|{:^35}|{:^20}|{:^15}|'.format(entry[0], row1, entry[2], entry[-1]))
+            while len(row2) > 35:
+                i = row2.index(' ', 20)
+                row1 = row2[:i]
+                row2 = row2[i+1:]
+                print('|{:^5}|{:^35}|{:^20}|{:^15}|'.format(' ', row1, '', ''))
+            print('|{:^5}|{:^35}|{:^20}|{:^15}|'.format(' ', row2, '', ''))
+             
+
+        else:
+            print('|{:^5}|{:^35}|{:^20}|{:^15}|'.format(entry[0], entry[1], entry[2], entry[-1]))
     conn.close()
     
 def go(db=database):
