@@ -48,5 +48,6 @@ def go(db=database):
 
     conn.close()
     
-
+if __name__ == '__main__':
+    go()
     
